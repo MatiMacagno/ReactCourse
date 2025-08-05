@@ -1,6 +1,6 @@
 import './App.css'
 import { AppForm, Button, ColorRed } from './components'
-
+import { GlobalProvider } from './context'
 
 function App() {
   const submit = () => {
@@ -16,14 +16,13 @@ function App() {
   }
 
   return (
-    <>
+    <GlobalProvider>
       <ColorRed><Button parentMethod={dimeHola}>My Boton Rojo</Button></ColorRed>
       <Button parentMethod={handleClick}> My Boton Normal</Button>
-
       <AppForm>
-        <button type="submit" onClick={submit} ></button>
+        <button type="submit" onClick={submit}></button>
       </AppForm>
-    </>
+    </GlobalProvider>
   )
 }
 
